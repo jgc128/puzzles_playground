@@ -18,7 +18,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: build.sh
+      - run: echo "${{ github.action_path }}"
+      - run: ls -ls ${{ github.action_path }}
+      - run: ./build.sh
         shell: bash
       - name: Build And Deploy
         id: builddeploy
